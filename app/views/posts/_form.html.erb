@@ -20,6 +20,10 @@
     <%= form.label :user_id %>
     <%= form.number_field :user_id, id: :post_user_id %>
   </div>
+  
+  <span class="picture">
+    <%= form.file_field :picture %>
+  </span>
 
   <div class="actions">
     <%= form.submit %>
