@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180626135155) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
