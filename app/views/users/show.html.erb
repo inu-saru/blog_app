@@ -1,4 +1,6 @@
 <% provide(:title, @user.name) %>
+
+<h1>User Infomation</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -11,19 +13,13 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
 
 
-  <div class="col-md-8">
+
     <% if @user.posts.any? %>
-      <h3>Microposts (<%= @user.posts.count %>)</h3>
-      
-      <ol class="posts">
+      <h3>This User's Post (<%= @user.posts.count %>)</h3>
       
         <%= render @posts %>
         
-      </ol>
       <%= will_paginate @posts %>
     <% end %>
-  </div>
