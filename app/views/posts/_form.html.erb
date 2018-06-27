@@ -10,17 +10,17 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :post_title %>
+  </div>
 
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, id: :post_content %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :post_user_id %>
-  </div>
-  
   <span class="picture">
     <%= form.file_field :picture %>
   </span>

@@ -1,8 +1,14 @@
 <li id="post-<%= post.id %>">
-          <span class="user"><%= link_to post.user.name, post.user %></span><br />
+          <span class="user"><%= post.user_id %>  <%= link_to 'post.user.name', post.user %></span><br />
           <span><%= post.title %></span><br />
-          <span class="content"><%= post.content %></span>
+          <span><%= image_tag post.picture.url if post.picture? %></span><br />
+          <span class="content"><%= post.content %></span><br />
           <span class="timestamp">
             Posted <%= time_ago_in_words(post.created_at) %> ago.
-          </span>
+          </span><br />
+          <span><%= link_to 'Show', post %></span>
+          <% if current_user?(post.user) || current_user.admin? %>
+            <span><%= link_to 'Edit', edit_post_path(post) %></span>
+            <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <% end %>
 </li>
